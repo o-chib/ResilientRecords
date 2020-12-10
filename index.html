@@ -44,8 +44,8 @@
 					<section id="banner">
 						<div class="inner">
 							<div class="logo"><span class="icon fa-gem"></span></div>
-							<h2>This is Solid State</h2>
-							<p>Another free + fully responsive site template by <a href="http://html5up.net">HTML5 UP</a></p>
+							<h2>Resilient Records</h2>
+							<p>Dynamic Access Control using ResilientDB</p>
 						</div>
 					</section>
 
@@ -57,9 +57,8 @@
 								<div class="inner">
 									<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
 									<div class="content">
-										<h2 class="major">Magna arcu feugiat</h2>
-										<p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
-										<a href="#" class="special">Learn more</a>
+										<h2 class="major">Our Mission:</h2>
+										<p>To use blockchain technology to safely and securely store patient medical data that is completely in control of the patient, as well as provide the means to easily give access to the records between various healthcare providers. The current healthcare system makes transfer of healthcare information difficult, failing to fulfill the needs of patients switching insurance systems or healthcare providers. To bridge this gap, we propose Resilient Records, to allow dynamic transfer of medical data.</p>
 									</div>
 								</div>
 							</section>
@@ -69,7 +68,7 @@
 								<div class="inner">
 									<a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
 									<div class="content">
-										<h2 class="major">Tempus adipiscing</h2>
+										<h2 class="major">Our Work:</h2>
 										<p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
 										<a href="#" class="special">Learn more</a>
 									</div>
@@ -81,7 +80,7 @@
 								<div class="inner">
 									<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
 									<div class="content">
-										<h2 class="major">Nullam dignissim</h2>
+										<h2 class="major">Alternate Use Cases of PRE:</h2>
 										<p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
 										<a href="#" class="special">Learn more</a>
 									</div>
@@ -90,8 +89,8 @@
 							<section id="wrapper">
 								<header>
 									<div class="inner">
-										<h2>Generic</h2>
-										<p>Phasellus non pulvinar erat. Fusce tincidunt nisl eget ipsum.</p>
+										<h2>Project Overview</h2>
+										<p>What our team learned and built this quarter</p>
 									</div>
 								</header>
 
@@ -99,13 +98,15 @@
 									<div class="wrapper">
 										<div class="inner">
 
-											<h3 class="major">Lorem ipsum dolor</h3>
-											<p>Morbi mattis mi consectetur tortor elementum, varius pellentesque velit convallis. Aenean tincidunt lectus auctor mauris maximus, ac scelerisque ipsum tempor. Duis vulputate ex et ex tincidunt, quis lacinia velit aliquet. Duis non efficitur nisi, id malesuada justo. Maecenas sagittis felis ac sagittis semper. Curabitur purus leo donec vel dolor at arcu tincidunt bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce ut aliquet justo. Donec id neque ipsum. Integer eget ultricies odio. Nam vel ex a orci fringilla tincidunt. Aliquam eleifend ligula non velit accumsan cursus. Etiam ut gravida sapien.</p>
+											<h3 class="major">Technological Focus</h3>
+											<p>Our work focuses on using Proxy Re-Encryption (PRE) mechanisms to enable the user to share files securely and dynamically give access in a public blockchain. This project also focuses on integrating PRE with ResilientDB.</p>
 
-											<p>Vestibulum ultrices risus velit, sit amet blandit massa auctor sit amet. Sed eu lectus sem. Phasellus in odio at ipsum porttitor mollis id vel diam. Praesent sit amet posuere risus, eu faucibus lectus. Vivamus ex ligula, tempus pulvinar ipsum in, auctor porta quam. Proin nec commodo, vel scelerisque nisi scelerisque. Suspendisse id quam vel tortor tincidunt suscipit. Nullam auctor orci eu dolor consectetur, interdum ullamcorper ante tincidunt. Mauris felis nec felis elementum varius.</p>
+											<h3 class="major">What is Proxy Re-Encryption?</h3>
+											<p>Proxy re-encryption (PRE) allows someone to encrypt data using a public key and then give access to that encrypted data to someone else without ever sharing a user’s personal private key. PRE achieves this by using a proxy as a middleman that performs re-encryption on that encrypted data. Re-encryption is the process of taking a conversion key and using it to swap the encrypted file from being encrypted by one public key to being encrypted by a different public key. </p>
+											<p>To elaborate, the owner of the encrypted data takes their personal private key and the public key of the recipient they’re trying to give access to. They take the private and public key and create a conversion key. The importance of the conversion key is that, if it used to encrypt the already encrypted file, it will remove the owner’s existing encryption and convert the file to being encrypted with the public key of the recipient. The process of re-encryption using the conversion key is relevant and necessary because the proxy that is performing the re-encryption is not capable of un-encrypting the original file: encrypting with the conversion key directly converts the encrypted file from the owner’s encryption to the recipient’s encryption. This is important because it means that none of the proxies have to be trusted, as it’s impossible to decrypt the file with the conversion key.</p>
 
-											<h3 class="major">Vitae phasellus</h3>
-											<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
+											<h3 class="major">How does Proxy Re-Encryption Fit into Our Model?</h3>
+											<p>We are building this system using the ResilientDB architecture which means that we have to fit PRE into the ResilientDB architecture somehow. So, in the scheme of PRE, the proxy will be the ResilientDB nodes/miners. That means that the ResilientDB nodes miners will be responsible for storing the conversion key that is generated when access to an encrypted file is given. Additionally, the ResilientDB nodes/miners will be responsible for the re-encryption of a given file using the conversion key that is stored on the blockchain. The blockchain will be responsible for removing conversion keys when the owner of an encrypted file requests to revoke permission to a recipient.</p>
 
 											<section class="features">
 												<article>
@@ -171,17 +172,16 @@
 					<section id="footer">
 						<div class="inner">
 							<h2 class="major">Get in touch</h2>
-							<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
+							<p>ECS189 Fall 2020, Professor Mohammad Sadoghi, TA Suyash Gupta</p>
+							<p>Team Members: Oorjit Chib, Mohammed Haque, Zachary Morris, Preeti Naidu, Tejvir Sohi</p>
 							<ul class="contact">
 								<li class="icon solid fa-home">
-									Untitled Inc<br />
-									1234 Somewhere Road Suite #2894<br />
-									Nashville, TN 00000-0000
+									University of California, Davis<br />
+									Davis, CA
 								</li>
-								<li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
 							</ul>
 							<ul class="copyright">
-								<li>&copy; Untitled Inc. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+								<li>&copy; ResilientRecords. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 							</ul>
 						</div>
 					</section>
