@@ -19,7 +19,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
 		<!-- Header -->
 		<header id="header" class="alt">
-			<h1><a href="index.html">ResilientRecords</a></h1>
+			<h1><a href="index.html">Resilient Records</a></h1>
 			<nav>
 				<a href="#menu">Menu</a>
 			</nav>
@@ -35,10 +35,8 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 					<li><a href="#deliverables">Deliverables</a></li>
 					<li><a href="#avenues">Avenues Explored</a></li>
 					<li><a href="#conclusions">Key Takeaways and Next Steps</a></li>
+					<li><a href="#timeline">Timeline</a></li>
 					<li><a href="#about_us">About Us</a></li>
-
-					<li><a href="generic.html">Generic</a></li>
-					<li><a href="elements.html">Elements</a></li>
 				</ul>
 				<a href="#" class="close">Close</a>
 			</div>
@@ -107,21 +105,36 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 						<article>
 							<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
 							<h3 class="major">Proxy Re-Encryption through PyUmbral</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-							<a href="https://github.com/zachmorris-ucd/PRE-pyUmbral-CPP" class="special">Learn more</a>
+							<p>Adaptation of pyUmbral threshold re-encryption through a C++ interface.</p>
+							<a href="https://github.com/zachmorris-ucd/PRE-pyUmbral-CPP" class="special">Visit GitHub</a>
 						</article>
 						<article>
 							<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
 							<h3 class="major">Smart Contracts through ResilientDB</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-							<a href="https://github.com/zachmorris-ucd/resilientdb" class="special">Learn more</a>
+							<p>Introduction of two smart contracts that send/receive information to/from worker nodes.</p>
+							<a href="https://github.com/zachmorris-ucd/resilientdb" class="special">Visit GitHub</a>
 						</article>
 					</section>
 				</div>
 			</section>
 
+			<!-- Initial Model Plan -->
+			<section class="wrapper style4">
+				<div class="inner">
+					<h3 class="major">Initial Model Plan</h3>
+					<p>Alice-Bob Interaction Diagram</p>
+					<div class="box alt">
+						<div class="row gtr-uniform">
+							<div class="col-12"><span class="image fit opaque"><img src="images/Resilient Records Architecture P1.png" alt="" /></span></div>
+							<div class="col-12"><span class="image fit opaque"><img src="images/Resilient Records Architecture P2.png" alt="" /></span></div>
+						<div>
+					</div>
+
+				</div>
+			</section>
+
 			<!-- PRE -->
-			<section class="wrapper style2">
+			<section class="wrapper alt style2">
 				<div class="inner">
 					<h3 class="major">What is Proxy Re-Encryption?</h3>
 					<p>Proxy re-encryption (PRE) allows someone to encrypt data using a public key and then give access to that encrypted data to someone else without ever sharing a user’s personal private key. PRE achieves this by using a proxy as a middleman that performs re-encryption on that encrypted data. Re-encryption is the process of taking a conversion key and using it to swap the encrypted file from being encrypted by one public key to being encrypted by a different public key. </p>
@@ -133,6 +146,19 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 				</div>
 			</section>
 
+			<!-- ResilientDB -->
+			<section class="wrapper style5">
+				<div class="inner">
+					<h3 class="major">ResilientDB</h3>
+					<p>We will be using ResilientDB as the system that handles consensus as well as the blockchain. We plan to fit ResilientDB to handle the inputs after running PRE and output to a distributed file storage using IPFS. With the multithreaded pipeline that ResilientDB employs using batch, worker, execute, and checkpoint threads, we believe that it should be sufficient for high throughput dynamic access control.</p>
+
+					<h3 class="major">What we modified on ResilientDB</h3>
+					<p>The first thing that we did is learn how the entire ResilientDB network works: how the client creates batch requests and messages, sends them to a primary thread, distributes the messages to the other worker node, and return a result back to the client node.</p>
+					<p>We created a smart contract that uploads an encrypted message as well as a re-encryption key to ResilientDB to be stored so that others can be given access to a specific person’s files.</p>
+					<p>We created a smart contract that allows people who have access to a file retrieve the encrypted message as well as retrieve the re-encryption key so that they can decrypt the file to plaintext and read it.</p>
+				</div>
+			</section>
+
 			<!-- OTHER AVENUES -->
 			<a name="avenues"></a>
 			<section class="wrapper alt style3">
@@ -140,36 +166,69 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 					<h2 class="major">Avenues Explored</h2>
 					<p>Several weeks were spent researching other platforms, networks and cryptographic engines in order to find a solution model that matches our initial implementation model closely; or could be used tangentially with our design plan for ResilientDB for a stronger development project within the scope of ten weeks.</p>
 					<section class="features">
+
+						<!-- NuCypher -->
 						<article>
 							<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
 							<h3 class="major">NuCypher</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-							<a href="#" class="special">Learn more</a>
+							<p><h5>What</h5>
+							Cryptographic Infrastructure for Privacy-Preserving Applications. Uses pyUmbral PRE under the hood to dynamically give or revoke access from multiple users.</p>
+							<p><h5>Why Yes</h5>
+							Fits our initial Alice-Bob model very well.</br>
+							Has its own engine for PRE.</p>
+							<p><h5>Why No</h5>
+							Limited Documentation for integrating to networks other than Ethereum.</p>
 						</article>
+
+						<!-- HyperLedger -->
 						<article>
 							<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
 							<h3 class="major">HyperLedger</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-							<a href="#" class="special">Learn more</a>
+							<p><h5>What</h5>
+							Suite of stable frameworks, tools and libraries for blockchain deployments. Focus: HyperLedger Fabric distributed ledger software.</p>
+							<p><h5>Why Yes</h5>
+							Many capabilities similar to dynamic access control.</p>
+							<p><h5>Why No</h5>
+							Setting up personal private channels is a huge barrier to entry for individuals.</br>
+							The intent of the private channels is so that large corporations can manage them whisch is against our mission.</p>
 						</article>
+
+						<!-- IPFS -->
 						<article>
 							<a href="#" class="image"><img src="images/pic06.jpg" alt="" /></a>
 							<h3 class="major">IPFS</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-							<a href="#" class="special">Learn more</a>
+							<p><h5>What</h5>
+							Flexible framework that provides reliable and secure, decentralized solutions to storing and accessing sensitive information.</p>
+							<p><h5>Why Yes</h5>
+							Easy to implement.</br>
+							Robust control over the data uploaded.</br>
+							Added layer of encyption.</p>
+							<p><h5>Why No</h5>
+							Written in python, while our work is primarily in C++.</br>
+							Complexity to integrate with ResilientDB fell out of scope.</p>
 						</article>
+
+						<!-- PRE Schemes -->
 						<article>
 							<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
 							<h3 class="major">PRE schemes</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-							<a href="#" class="special">Learn more</a>
+							<h3 class="major">IPFS</h3>
+							<p><h5>What</h5>
+							Performing proxy re-encryption uses an incredibly complex and specific hashing algorithm, one that uses elliptical curves. We explored several other PREs before settling on pyUmbral.</p>
+							<p><h5>Why Yes</h5>
+							If found, can be used to create C++ program to manually re-encrypt files as needed.</br>
+							Will require a deep dive into ResilientDB's architecure to implement, which enriches learning experience.</p>
+							<p><h5>Why No</h5>
+							Difficult to find a cryptographic algorithm that uses elliptical curves AND can be easily integrated with a C++ program.</br>
 						</article>
+
 					</section>
 				</div>
 			</section>
 		</section>
 
 		<!-- CONCLUSION -->
+		<a name="conclusions"></a>
 		<section id="wrapper">
 
 			<!-- KEY TAKEAWAYS -->
@@ -199,7 +258,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 				</div>
 			</section>
 
-			<!-- ALTERNATIVE USE CASES -->
+			<!-- LEARNED -->
 			<section class="wrapper alt spotlight style3">
 				<div class="inner">
 					<div class="content">
@@ -212,6 +271,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 		</section>
 
 		<!-- TIMELINE -->
+		<a name="timeline"></a>
 		<section class="wrapper style1">
 			<div class="inner" id="subtitle">
 				<h2 class="major">Development Timeline</h2>
@@ -286,9 +346,9 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
 		<!-- Footer -->
 		<section id="footer">
+			<a name="about_us"></a>
 			<div class="inner">
-				<a name="about_us"></a>
-				<h2 class="major">Get in touch</h2>
+				<h2 class="major">About Team</h2>
 				<p>ECS189 Fall 2020, Professor Mohammad Sadoghi, TA Suyash Gupta</p>
 				<p>Team Members: Oorjit Chib, Mohammed Haque, Zachary Morris, Preeti Naidu, Tejvir Sohi</p>
 				<ul class="contact">

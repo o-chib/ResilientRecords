@@ -4156,3 +4156,6 @@ input, select, textarea {
 			line-height: 2;
 			text-transform: uppercase;
 	}
+	.opaque{
+		background-color: white;
+	}
